@@ -14,4 +14,5 @@ $(".nav-link").on('click', function () {
 
   // Need to replace this with something useful (loading content)
   console.log("Loading content: " + $(this).attr("id"));
+  $("main").load("pages/lorem.html #lorem");
 });
