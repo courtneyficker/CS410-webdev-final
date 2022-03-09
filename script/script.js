@@ -1,12 +1,28 @@
 $(document).ready(() => {
+
   function load_content(loadstr) {
-    $("main").load("pages/" + loadstr + ".html");
+    // .load("pages/example.html #example")
+    $("main").load("pages/" + loadstr + ".html #" + loadstr, function() {
+      console.log("Loaded " + loadstr);
+      console.log($("form").attr("name"));
+    });
   };
 
-  $("#loading").addClass(".d-none");
-  load_content("about"); // Default page
+  $("#loading").addClass(".d-none");  // Hide spinner
+  load_content("about");              // Load default page ("About")
 
-  
+  $("#contact-form").submit(function(event) {
+    console.log("clicked");
+    // Check for required fields
+    let fn = this.find("fullname");
+    let e = this.find("email");
+    console.group("========= Form Submission =========");
+    console.log("Name: " + fn.value);
+    console.log("Email: " + e.value);
+    console.log("Message:\n" + this.find("message").value);
+    console.groupEnd();
+    event.preventDefault();
+  });
 
   $(".nav-link").on("click", function () {
     function mark_active(curr) {
@@ -15,13 +31,9 @@ $(document).ready(() => {
       curr.addClass("active");
     }
 
+    // Mark the tab just clicked as being active, then load the content
     mark_active($(this));
-
-    // Need to replace this with something useful (loading content)
     let id = $(this).attr("id");
-    console.log("Loading content: " + id);
-    let loadstr = "pages/" + id + ".html #" + id;
-    //console.log(loadstr);
-    load_content(loadstr);
+    load_content(id);
   });
 });
