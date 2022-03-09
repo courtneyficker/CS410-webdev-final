@@ -4,7 +4,6 @@ $(document).ready(() => {
     // .load("pages/example.html #example")
     $("main").load("pages/" + loadstr + ".html #" + loadstr, function() {
       console.log("Loaded " + loadstr);
-      console.log($("form").attr("name"));
     });
   };
 
