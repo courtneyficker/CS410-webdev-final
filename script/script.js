@@ -11,7 +11,10 @@ $(document).ready(() => {
     mark_active($(this));
 
     // Need to replace this with something useful (loading content)
-    console.log("Loading content: " + $(this).attr("id"));
-    $("main").load("pages/lorem.html #lorem");
+    let id = $(this).attr("id");
+    console.log("Loading content: " + id);
+    let loadstr = "pages/" + id + ".html #" + id;
+    console.log(loadstr);
+    $("main").load(loadstr);
   });
 });
