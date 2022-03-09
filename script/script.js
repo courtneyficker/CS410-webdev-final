@@ -1,5 +1,12 @@
 $(document).ready(() => {
+  function load_content(loadstr) {
+    $("main").load("pages/" + loadstr + ".html");
+  };
+
   $("#loading").addClass(".d-none");
+  load_content("about"); // Default page
+
+  
 
   $(".nav-link").on("click", function () {
     function mark_active(curr) {
@@ -14,7 +21,7 @@ $(document).ready(() => {
     let id = $(this).attr("id");
     console.log("Loading content: " + id);
     let loadstr = "pages/" + id + ".html #" + id;
-    console.log(loadstr);
-    $("main").load(loadstr);
+    //console.log(loadstr);
+    load_content(loadstr);
   });
 });
