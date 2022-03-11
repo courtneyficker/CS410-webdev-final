@@ -10,15 +10,12 @@ $(document).ready(() => {
   $("#loading").addClass(".d-none");  // Hide spinner
   load_content("about");              // Load default page ("About")
 
-  $("#contact-form").submit(function(event) {
-    console.log("clicked");
-    // Check for required fields
-    let fn = this.find("fullname");
-    let e = this.find("email");
+  $(document).on('submit','#contact-form',function(event){
+    console.log("form submitted");
     console.group("========= Form Submission =========");
-    console.log("Name: " + fn.value);
-    console.log("Email: " + e.value);
-    console.log("Message:\n" + this.find("message").value);
+    console.log("Name: " + $('#fullname').val());
+    console.log("Email: " + $('#email').val());
+    console.log("Message: " + $('#message').val());
     console.groupEnd();
     event.preventDefault();
   });

@@ -23,6 +23,18 @@
   --green: #006400;
 }
 
+.page {
+  max-width: 700px;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.self-image {
+  max-height: 250px;
+  float: left;
+  border-radius: 50%;
+}
+
 /* Social media icons in footer */
 .footer_social {
   height: 20px;
@@ -42,3 +54,6 @@ footer .btn:hover {
   background-color: rgba(0, 0, 0, 0.9)!important;
 }
 
+#about p:first-of-type::first-line {
+  font-weight: bold;
+}
