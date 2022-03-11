@@ -87,3 +87,24 @@ footer .btn:hover {
   background-color: var(--white);
   border: 1px solid var(--gold);
 }
+
+
+/* Projects page */
+
+.project-item {
+  list-style: none;
+}
+
+.project-item .project-name {
+  border: 1px solid green;
+}
+
+.project-item .logo {
+  max-height: 200px;
+  max-width: 200px;
+
+  float: right;
+
+  background-color: var(--white);
+  border: 1px solid var(--gold);
+}
