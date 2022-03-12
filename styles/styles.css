@@ -24,10 +24,15 @@
   --gold: #ffc107;
 }
 
+/* main {
+  min-height: 90vh;
+} */
+
 .page {
   max-width: 700px;
   margin-top: 2em;
   margin-bottom: 2em;
+  min-height: 100%;
 }
 
 /* Main page, header/navbar */
@@ -74,9 +79,10 @@ footer .btn:hover {
   list-style: none;
 }
 
-.resume-item span {
+.resume-item .title {
   font-weight: bold;
 }
+
 
 .resume-item .logo {
   max-height: 100px;
