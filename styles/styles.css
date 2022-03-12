@@ -50,7 +50,12 @@ body {
   padding-right: 0;
 }
 
-footer .btn:hover {
+.navbar .btn:hover {
+  background-color: var(--black);
+  filter: invert(1);
+}
+
+.footer .btn:hover {
   background-color: var(--gray3);
 }
 
@@ -79,6 +84,7 @@ footer .btn:hover {
 
 .resume-item {
   list-style: none;
+  border-top: 2px solid var(--gold);
 }
 
 .resume-item .title {
@@ -115,4 +121,8 @@ footer .btn:hover {
 
   background-color: var(--white);
   border: 1px solid var(--gold);
+}
+
+.card-subtitle {
+  color: var(--gray4);
 }
